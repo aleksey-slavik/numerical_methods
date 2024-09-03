@@ -4,9 +4,8 @@ def print_test_result(condition):
     else:
         print("Test not passed. Try again.")
 
-def test_connection():
+def sample_test(variant):
     print("Test passed.")
-
 
 def task1(variant, number, significant_numbers):
     answers = {
