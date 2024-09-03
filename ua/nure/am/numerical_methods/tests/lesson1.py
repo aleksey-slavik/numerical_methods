@@ -1,11 +1,16 @@
+import math
+
+
 def print_test_result(condition):
     if condition:
         print("Test passed.")
     else:
         print("Test not passed. Try again.")
 
+
 def sample_test(variant):
     print("Test passed.")
+
 
 def task1(variant, number, significant_numbers):
     answers = {
@@ -13,4 +18,15 @@ def task1(variant, number, significant_numbers):
         1: []
     }
 
-    print_test_result(answers.get(variant)[0] == number and answers.get(variant)[1] == significant_numbers)
+    print_test_result(answers.get(variant)[0] == number and
+                      answers.get(variant)[1] == significant_numbers)
+
+
+def task2(variant, absolute_error, relative_error):
+    answers = {
+        0: [0.0013, 0.003714],
+        1: []
+    }
+
+    print_test_result(math.isclose(answers.get(variant)[0], absolute_error) and
+                      math.isclose(answers.get(variant)[1], relative_error))
