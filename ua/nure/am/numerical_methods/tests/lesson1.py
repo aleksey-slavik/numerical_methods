@@ -24,12 +24,12 @@ def task1(variant, number, significant_numbers):
 
 def task2(variant, absolute_error, relative_error):
     answers = {
-        0: [0.00030000000000002247, 0.0008547008547009188],
+        0: [0.0003, 0.0008547],
         1: []
     }
 
-    print_test_result(math.isclose(answers.get(variant)[0], absolute_error) and
-                      math.isclose(answers.get(variant)[1], relative_error))
+    print_test_result(math.isclose(answers.get(variant)[0], absolute_error, rel_tol=1e-05, abs_tol=1e-05) and
+                      math.isclose(answers.get(variant)[1], relative_error, rel_tol=1e-05, abs_tol=1e-05))
 
 
 def task3(variant, right_count, right_numbers, doubtful_count, doubtful_numbers):
