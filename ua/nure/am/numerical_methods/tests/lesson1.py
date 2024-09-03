@@ -105,3 +105,13 @@ def task7(variant, final_value, final_error):
 
     print_test_result(answers.get(variant)[0] == final_value and
                       math.isclose(answers.get(variant)[1], final_error, rel_tol=1e-05, abs_tol=1e-05))
+
+
+def task8(variant, final_value, final_error):
+    answers = {
+        0: [2.35, 0.0043999],
+        1: []
+    }
+
+    print_test_result(answers.get(variant)[0] == final_value and
+                      math.isclose(answers.get(variant)[1], final_error, rel_tol=1e-05, abs_tol=1e-05))
