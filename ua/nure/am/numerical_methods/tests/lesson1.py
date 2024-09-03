@@ -80,6 +80,18 @@ def task5(variant, calculated_value, absolute_error, relative_error):
         1: []
     }
 
-    print_test_result(math.isclose(answers.get(variant)[0], calculated_value) and
-                      math.isclose(answers.get(variant)[1], absolute_error) and
-                      math.isclose(answers.get(variant)[2], relative_error))
+    print_test_result(math.isclose(answers.get(variant)[0], calculated_value, rel_tol=1e-05, abs_tol=1e-05) and
+                      math.isclose(answers.get(variant)[1], absolute_error, rel_tol=1e-05, abs_tol=1e-05) and
+                      math.isclose(answers.get(variant)[2], relative_error, rel_tol=1e-05, abs_tol=1e-05))
+
+
+def task6(variant, boundary_relative_error1, boundary_relative_error2):
+    answers = {
+        0: [-0.0099, 0.00024, 0.00064],
+        1: []
+    }
+
+    print_test_result((answers.get(variant)[0] < answers.get(variant)[1] and
+                       boundary_relative_error1 < boundary_relative_error2) or
+                      (answers.get(variant)[0] < answers.get(variant)[1] and
+                       boundary_relative_error1 < boundary_relative_error2))

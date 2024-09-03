@@ -25,7 +25,6 @@ def get_omega_pow_value(omega, delta):
 
 
 def task3_data_generator(number, delta):
-    # print("Task 3 generated data for x =", number, ", delta =", delta)
     numbers_count = len(get_numbers_list(number))
     # print("numbers_count =", numbers_count)
     number_order = get_number_order_value(number)
@@ -44,7 +43,6 @@ def task3_data_generator(number, delta):
 
 
 def task4_data_generator(number, delta):
-    # print("Task 4 generated data for x =", number, ", delta =", delta)
     numbers_count = len(get_numbers_list(number))
     # print("numbers_count =", numbers_count)
     number_order = get_number_order_value(number)
