@@ -95,3 +95,13 @@ def task6(variant, boundary_relative_error1, boundary_relative_error2):
                        boundary_relative_error1 < boundary_relative_error2) or
                       (answers.get(variant)[0] < answers.get(variant)[1] and
                        boundary_relative_error1 < boundary_relative_error2))
+
+
+def task7(variant, final_value, final_error):
+    answers = {
+        0: [72, 0.35299],
+        1: []
+    }
+
+    print_test_result(answers.get(variant)[0] == final_value and
+                      math.isclose(answers.get(variant)[1], final_error, rel_tol=1e-05, abs_tol=1e-05))
