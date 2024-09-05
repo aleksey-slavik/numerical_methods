@@ -50,8 +50,8 @@ def task_1(variant, value, rounded_value, D_value, d_value):
 
     print_test_result(answers.get(variant)[0] == value and
                       answers.get(variant)[1] == rounded_value and
-                      math.isclose(answers.get(variant)[0], D_value, rel_tol=1e-05, abs_tol=1e-05) and
-                      math.isclose(answers.get(variant)[1], d_value, rel_tol=1e-05, abs_tol=1e-05))
+                      math.isclose(answers.get(variant)[2], D_value, rel_tol=1e-05, abs_tol=1e-05) and
+                      math.isclose(answers.get(variant)[3], d_value, rel_tol=1e-05, abs_tol=1e-05))
 
 
 def task_2_a(variant, right_count, right_numbers, doubtful_count, doubtful_numbers):
