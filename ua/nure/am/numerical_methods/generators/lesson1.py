@@ -24,7 +24,20 @@ def get_omega_pow_value(omega, delta):
     return power
 
 
-def task3_data_generator(number, delta):
+def task_1_data_generator():
+    result = {}
+
+    for i in range(1, 31):
+        number = round(random.uniform(0, 1), 6)
+        rounded_number = round(number, 3)
+        D_value = abs(number - rounded_number)
+        d_value = D_value / abs(number)
+        result[i] = [number, rounded_number, D_value, d_value]
+
+    return result
+
+
+def task_2_a_data_generator(number, delta):
     numbers_count = len(get_numbers_list(number))
     # print("numbers_count =", numbers_count)
     number_order = get_number_order_value(number)
@@ -42,7 +55,7 @@ def task3_data_generator(number, delta):
     return [right_count, right_numbers, doubtful_count, doubtful_numbers]
 
 
-def task4_data_generator(number, delta):
+def task_2_b_data_generator(number, delta):
     numbers_count = len(get_numbers_list(number))
     # print("numbers_count =", numbers_count)
     number_order = get_number_order_value(number)
@@ -60,7 +73,7 @@ def task4_data_generator(number, delta):
     return [right_count, right_numbers, doubtful_count, doubtful_numbers]
 
 
-def generate_task3_test_data():
+def generate_task_2_test_data():
     result = {}
 
     for i in range(1, 31):
@@ -69,29 +82,41 @@ def generate_task3_test_data():
     return result
 
 
-def generate_task3_verification_data(test_data):
+def generate_task_2_a_verification_data(test_data):
     result = {}
 
     for i in range(1, 31):
         number = test_data.get(i)[0]
         delta = test_data.get(i)[1]
-        result[i] = task3_data_generator(number, delta)
+        result[i] = task_2_a_data_generator(number, delta)
 
     return result
 
 
-def generate_task4_verification_data(test_data):
+def generate_task_2_b_verification_data(test_data):
     result = {}
 
     for i in range(1, 31):
         number = test_data.get(i)[0]
         delta = test_data.get(i)[1]
-        result[i] = task4_data_generator(number, delta)
+        result[i] = task_2_b_data_generator(number, delta)
 
     return result
 
 
-generated_data = generate_task3_test_data()
-print(generated_data)
-print(generate_task3_verification_data(generated_data))
-print(generate_task4_verification_data(generated_data))
+def generate_task_3_data():
+    result = {}
+
+    for i in range(1, 31):
+        a = random.randint(1, 10)
+        b = random.randint(-10, 10)
+        c = random.randint(-10, 10)
+        x = round(random.uniform(-1, 1), 2)
+        d_x = random.uniform(-0.1, 0.1)
+        f = round(a * x**2 + b * x + c + d_x, 2)
+        result[i] = [a, b, c, x, f]
+
+    return result
+
+
+print(generate_task_3_data())
