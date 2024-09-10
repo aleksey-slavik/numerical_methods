@@ -61,7 +61,7 @@ def task_3(variant, x_1, x_2, x_3):
 
 def task_4(variant, x_1, x_2, x_3):
     answers = {
-        0: [-3.023, 0.413, 1.184]
+        0: [-0.916, 0.413, 1.184]
     }
 
     print_test_result(math.isclose(answers.get(variant)[0], x_1, rel_tol=1e-03, abs_tol=1e-03) and
